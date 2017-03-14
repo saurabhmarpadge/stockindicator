@@ -29,7 +29,7 @@ h3{
 */
 
 .navbar{
-	height:40px !important;
+	height:45px !important;
 	background:#5c5b69;
 	border:0;
 	margin-bottom:30px;
@@ -149,5 +149,5 @@ a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.acti
   border-color:#34495E;
   border-radius: 10px;
   border-width: 1px;
-  margin: .0001%;
+  margin-bottom: 20px;
   }
