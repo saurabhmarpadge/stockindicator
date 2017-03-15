@@ -19,19 +19,10 @@
     <!-- Custom styles for this template -->
     <link href="<?php echo BASE_URI;?>templates/css/custom.css" rel="stylesheet">
 
-
     <!-- Custom styles for this template -->
     <link href="<?php echo BASE_URI;?>templates/css/dashboard.css" rel="stylesheet">
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="<?php echo BASE_URI;?>templates/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  
   </head>
 
   <body>
@@ -45,14 +36,27 @@
       	<ul class="nav navbar-nav">
       	  <li class="active"><a href="dashboard.php">Home</a></li>
       	</ul>
+
         <!-- left side -->
       	<ul class="nav navbar-nav navbar-right">
       	  <li><a href="#" data-toggle="modal" data-target="#signup"><span class="glyphicon glyphicon-user"></span> SignUp</a></li>
       	  <li><a href="#" data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+
       	</ul>
   	  </div>
-	  </nav>
+
+    </nav>
+
+        <!-- START Worden Top Gainers and Losers Ticker Widget -->
+<script src="http://widgets.freestockcharts.com/js/jquery-1.3.1.min.js" type="text/javascript"></script> <script src="http://widgets.freestockcharts.com/script/WBIHorizontalTicker2.js?ver=12334" type="text/javascript"></script> <link href="http://widgets.freestockcharts.com/WidgetServer/WBITickerblue.css" rel="stylesheet" type="text/css" />
+<script>
+    var gainerTick = new WBIHorizontalTicker('gainers');
+    gainerTick.start();
+    var loserTick = new WBIHorizontalTicker('losers');
+    loserTick.start();
+	</script> <!-- End Scrolling Ticker Widget -->
+
 
     <!-- Modal -->
     <div id="login" class="modal fade" role="dialog">

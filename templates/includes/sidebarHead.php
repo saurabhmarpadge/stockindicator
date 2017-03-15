@@ -3,7 +3,7 @@
     <div class="col-sm-3 col-md-2 sidebar">
       <ul class="nav nav-sidebar">
         <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-        <li><a href="company.html">Companies</a></li>
+        <li><a href="<?php echo BASE_URI;?>company.php">Companies</a></li>
         <li><a href="#">Trends</a></li>
         <li><a href="#">Poll</a></li>
       </ul>
@@ -15,9 +15,9 @@
       </ul>
 
       <ul class="nav nav-sidebar">
-        <li><a href="settings.html">Account Settings</a></li>
-        <li><a href="changepassword.html">Change Password</a></li>
-        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="<?php echo BASE_URI;?>settings.php">Account Settings</a></li>
+        <li><a href="<?php echo BASE_URI;?>changepassword.php">Change Password</a></li>
+        <li><a href="<?php echo BASE_URI;?>feedback.php">Feedback</a></li>
       </ul>
     </div>
 
