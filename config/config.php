@@ -8,4 +8,4 @@ define("DB_NAME", "");
 define("SITE_TITLE", "Welcome To Stock Market");
 
 //Paths
-define ('BASE_URI', 'http://'.$_SERVER['SERVER_NAME'].'/market/');
+define ('BASE_URI', 'http://'.$_SERVER['SERVER_NAME'].'/stockindicator/');

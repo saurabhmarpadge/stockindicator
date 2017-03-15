@@ -1,65 +1,137 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <title>Welcome To MyPosts</title>
-
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="<?php echo BASE_URI;?>templates/img/favicon.ico">
+    <title>Stack Market</title>
     <!-- Bootstrap core CSS -->
     <link href="<?php echo BASE_URI;?>templates/css/bootstrap.css" rel="stylesheet">
 
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="<?php echo BASE_URI;?>templates/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
     <!-- Custom styles for this template -->
     <link href="<?php echo BASE_URI;?>templates/css/custom.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="<?php echo BASE_URI;?>templates/js/ckeditor/ckeditor.js"></script>
-    <?php
-    //Check if title is set or Assign
-    if(!isset($title)){
-      $title = SITE_TITLE;
-    }
-     ?>
 
-</head>
 
-<body>
+    <!-- Custom styles for this template -->
+    <link href="<?php echo BASE_URI;?>templates/css/dashboard.css" rel="stylesheet">
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-                <a class="navbar-brand" href="index.php">MyPosts</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="index.php">Home</a></li>
-                    <?php if (!isLoggedIn()): ?>
-                      <li><a href="register.php">Create An Account</a></li>
-                    <?php else: ?>
-                      <li><a href="create.php">Create Topic</a></li>
-                    <?php endif; ?>
-                </ul>
-            </div>
-            <!--/.nav-collapse -->
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="<?php echo BASE_URI;?>templates/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+  	  <div class="container-fluid">
+    		<div class="navbar-header">
+    		  <a class="navbar-brand" href="index.php">Stock Market</a>
+    		</div>
+        <!-- Right side -->
+      	<ul class="nav navbar-nav">
+      	  <li class="active"><a href="dashboard.php">Home</a></li>
+      	</ul>
+        <!-- left side -->
+      	<ul class="nav navbar-nav navbar-right">
+      	  <li><a href="#" data-toggle="modal" data-target="#signup"><span class="glyphicon glyphicon-user"></span> SignUp</a></li>
+      	  <li><a href="#" data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+      	</ul>
+  	  </div>
+	  </nav>
+
+    <!-- Modal -->
+    <div id="login" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Login</h4>
         </div>
-    </nav>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+              <label for="username">Username :</label>
+              <input type="text" class="form-control" id="username">
+              </div>
+              <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" id="pwd">
+              </div>
+              <div class="checkbox">
+              <label><input type="checkbox"> Remember me</label>
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
 
-    <div class="container">
+      </div>
+    </div>
 
-        <div class="row">
-            <div class="col-md-8">
-                <div class="main-col">
-                    <div class="block">
-                        <h1 class="pull-left"><?php echo $title; ?></h1>
-                        <h4 class="pull-right">A simple PHP forum engine</h4>
-                        <div class="clearfix"></div>
-                        <hr>
-                        <?php displayMessage();?>
+
+		<!-- Modal -->
+		<div id="signup" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Sign Up</h4>
+			  </div>
+			  <div class="modal-body">
+				<form method="post" action="">
+					 <div class="form-group">
+					 <label>First Name*</label>
+					 <input type="text" class="form-control" name="first_name" placeholder="Enter First Name">
+					</div>
+					<div class="form-group">
+					 <label>Last Name*</label>
+					 <input type="text" class="form-control" name="last_name" placeholder="Enter Last Name">
+					</div>
+					<div class="form-group">
+					 <label>Email Id*</label>
+					 <input type="email" class="form-control" name="email" placeholder="Enter Email Id">
+					</div>
+					<div class="form-group">
+					 <label>Username*</label>
+					 <input type="text" class="form-control" name="username" placeholder="Enter Username">
+					</div>
+					<div class="form-group">
+					 <label>Password*</label>
+					 <input type="password" class="form-control" name="password" placeholder="Enter Password">
+					</div>
+					<div class="form-group">
+					 <label>Confirm Password*</label>
+					 <input type="password" class="form-control" name="password2" placeholder="Enter Password">
+					</div>
+					<button name="submit" type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			  </div>
+			</div>
+
+		  </div>
+		</div>

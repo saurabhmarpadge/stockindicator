@@ -2,7 +2,7 @@
 
 <?php
 //Get Template & Assign Vars
-$template = new Template('templates/frontpage.php');
+$template = new Template('templates/dashboard.php');
 //Display Template
 echo $template;
 

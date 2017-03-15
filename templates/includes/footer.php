@@ -1,54 +1,22 @@
-        </div>
-    </div>
-</div>
-<div class="col-md-4">
-  <div class="sidebar">
-    <div class="block">
-        <h3>Login Form</h3>
-        <?php if(isLoggedIn()) : ?>
-            <div class="usedata">
-              Welcome, <?php echo getUser()['username']; ?>
-            </div>
-            <br>
-            <form role="form" action="logout.php" method="post">
-                <input type="submit" name="do_logout" class="btn btn-primary" value="Logout">
-            </form>
-          <?php else: ?>
-        <form role="form" method="post" action="login.php">
-            <div class="form-group">
-                <label>Username</label>
-                <input name="username" type="text" class="form-control" placeholder="Enter Username">
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input name="password" type="password" class="form-control" placeholder="Enter Password">
-            </div>
+<hr>
 
-            <button name="do_login" type="submit" class="btn btn-primary">Login</button>
-            <a class="btn btn-default" href="register.php">Create Account</a>
-        </form>
-      <?php endif; ?>
-    </div>
-  <div class="block">
-      <h3>Categories</h3>
-      <div class="list-group">
-        <a href="topics.php" class="list-group-item <?php echo is_active(null); ?>">All Topics <span class="badge pull-right"></span></a>
-      <?php foreach(getCategories() as $category) : ?>
-        <a href="topics.php?category=<?php echo $category->id; ?>" class="list-group-item <?php echo is_active($category->id); ?>"><?php echo $category->name; ?> </a>
-      <?php endforeach; ?>
-      </div>
-
-    </div>
-  </div>
-</div>
-</div>
-
-</div>
-<!-- /.container -->
+<footer>
+  <p>&copy; 2017 Company, Inc.</p>
+</footer>
+</div> <!-- /container -->
 
 
 
 
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="<?php echo BASE_URI;?>templates/js/jquery.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
+<script src="<?php echo BASE_URI;?>templates/js/bootstrap.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="<?php echo BASE_URI;?>templates/js/ie10-viewport-bug-workaround.js"></script>
 </body>
-
 </html>
