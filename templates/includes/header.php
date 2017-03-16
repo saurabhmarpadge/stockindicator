@@ -22,7 +22,7 @@
     <!-- Custom styles for this template -->
     <link href="<?php echo BASE_URI;?>templates/css/dashboard.css" rel="stylesheet">
 
-  
+
   </head>
 
   <body>
@@ -32,16 +32,21 @@
     		<div class="navbar-header">
     		  <a class="navbar-brand" href="index.php">Stock Market</a>
     		</div>
+        <?php if(isLoggedIn()) : ?>
         <!-- Right side -->
       	<ul class="nav navbar-nav">
       	  <li class="active"><a href="dashboard.php">Home</a></li>
       	</ul>
-
+      <?php endif; ?>
         <!-- left side -->
       	<ul class="nav navbar-nav navbar-right">
+          <?php if(isLoggedIn()) : ?>
+          <li class="active"><a href="">Welcome, <?php echo getUser()['username']; ?></a></li>
+          <li><a href="logout.php" ><span class="glyphicon glyphicon-log-out"></span>            Logout</a></li>
+          <?php else: ?>
       	  <li><a href="#" data-toggle="modal" data-target="#signup"><span class="glyphicon glyphicon-user"></span> SignUp</a></li>
       	  <li><a href="#" data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+          <?php endif; ?>
 
       	</ul>
   	  </div>
@@ -69,19 +74,19 @@
           <h4 class="modal-title">Login</h4>
         </div>
           <div class="modal-body">
-            <form>
+            <form role="form" method="post" action="login.php">
               <div class="form-group">
               <label for="username">Username :</label>
-              <input type="text" class="form-control" id="username">
+              <input type="text" class="form-control" name="username" id="username">
               </div>
               <div class="form-group">
               <label for="pwd">Password:</label>
-              <input type="password" class="form-control" id="pwd">
+              <input type="password" class="form-control" name="password" id="pwd">
               </div>
               <div class="checkbox">
               <label><input type="checkbox"> Remember me</label>
               </div>
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button name="do_login" type="submit" class="btn btn-default">Login</button>
             </form>
           </div>
         <div class="modal-footer">
@@ -104,14 +109,14 @@
 				<h4 class="modal-title">Sign Up</h4>
 			  </div>
 			  <div class="modal-body">
-				<form method="post" action="">
+				<form role="form" enctype="multipart/form-data" method="post" action="register.php">
 					 <div class="form-group">
 					 <label>First Name*</label>
-					 <input type="text" class="form-control" name="first_name" placeholder="Enter First Name">
+					 <input type="text" class="form-control" name="firstname" placeholder="Enter First Name">
 					</div>
 					<div class="form-group">
 					 <label>Last Name*</label>
-					 <input type="text" class="form-control" name="last_name" placeholder="Enter Last Name">
+					 <input type="text" class="form-control" name="lastname" placeholder="Enter Last Name">
 					</div>
 					<div class="form-group">
 					 <label>Email Id*</label>
@@ -129,7 +134,7 @@
 					 <label>Confirm Password*</label>
 					 <input type="password" class="form-control" name="password2" placeholder="Enter Password">
 					</div>
-					<button name="submit" type="submit" class="btn btn-primary">Submit</button>
+					<button name="register" type="submit" class="btn btn-primary">Sign Up</button>
 				</form>
 			  </div>
 			  <div class="modal-footer">
