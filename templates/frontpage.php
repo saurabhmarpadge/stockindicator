@@ -32,8 +32,7 @@ function load()
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-6">
-          <h2>Heading</h2>
-          <!-- TradingView Widget BEGIN -->
+          <h2>Stock Chart</h2>
           <script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
           <script type="text/javascript">
           new TradingView.widget({
@@ -51,6 +50,9 @@ function load()
             "hideideas": true
           });
           </script>
+
+
+        <!-- TradingView Widget BEGIN -->
           <!-- TradingView Widget END -->
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
        </div>

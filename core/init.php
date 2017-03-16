@@ -12,6 +12,10 @@
 
   //Autoload Classes It loads libraries
   function __autoload($class_name){
-    require_once('libraries/'.$class_name.'.php');//Here we load all files just Take care of file and class have the same name
+    //require_once('libraries/'.$class_name.'.php');//Here we load all files just Take care of file and class have the same name
+    require_once('libraries/Database.php');
+    require_once('libraries/Template.php');
+    require_once('libraries/User.php');
+    require_once('libraries/Validator.php');
   }
 ?>
