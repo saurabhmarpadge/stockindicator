@@ -1,4 +1,12 @@
-
+<script type="text/javascript">
+function load()
+{
+  if(document.getElementById("box").style.display == "none")
+    document.getElementById("box").style.display = "block";
+  else
+    document.getElementById("box").style.display = "none";
+}
+</script>
 <?php include('includes/header.php');?>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -7,9 +15,11 @@
         <h1>Stock Market</h1>
         <p>Get latest trends of Stock Market.</p>
 
+        <div id="box" style="display: none">
+        Hello World!!
+        </div>
 
-
-        <p><a class="btn btn-primary btn-lg" href="#"  role="button">Learn more &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" href="#"  role="button" onclick="load()">Learn more &raquo;</a></p>
       </div>
     </div>
 
