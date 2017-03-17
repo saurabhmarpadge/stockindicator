@@ -2,7 +2,7 @@
 /*$(document).ready(function(){
    $("button").click(function(){
     $("#plot").click*/
-    $(document).ready(function(){
+$(document).ready(function(){
   $.ajax({
     url : "http://localhost/stockindicator/creategraph.php",
     type : "GET",
@@ -111,6 +111,5 @@
     error : function(data) {
 
     }
-  });
-
-});
+  })
+})

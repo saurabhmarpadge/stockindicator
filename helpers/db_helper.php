@@ -1,9 +1,9 @@
 
 <?php
-$companyid=2;
+
 function setGraph($id){
-  $GLOBALS['companyid'] = $id;
-  //  die($GLOBALS['companyid']);
+$_SESSION['companyid'] = $id;
+  //die($GLOBALS['companyid']);
 }
 /*
  * Get  # of companies
@@ -21,7 +21,7 @@ function getCompanies(){
 function getGraph(){
   $db = new Database;
   $db->query('SELECT graph.gp,graph.rsi,graph.reality,graph.twitter,graph.ondate FROM graph WHERE graph.companyid =:companyid');
-  $db->bind(':companyid', $GLOBALS['companyid']);
+  $db->bind(':companyid', $_SESSION['companyid']);
 
   //Assign Result Set
   $results = $db->resultset();
