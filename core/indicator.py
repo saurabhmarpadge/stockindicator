@@ -1,12 +1,20 @@
-import ystockquote,pandas,operator,math,random,numpy,sys,csv,json
+import ystockquote,pandas,operator,math,random,numpy,sys,csv,json,datetime
 from deap import algorithms, base, creator, tools, gp
 from pprint import pprint
 class AutoVivification(dict):
 	def __getitem__(self, key):
 		return eval(dict.__getitem__(self,key), self, {})
 past_data = AutoVivification()
-past_data = ystockquote.get_historical_prices(sys.argv[1],'2017-01-03','2017-03-01')
-weekdays = pandas.Series(pandas.bdate_range('20170103 09:10:12', periods=15))
+
+#--------------------------
+today = datetime.date.today()
+one_day_into_25 = datetime.timedelta(days=25)
+previousDay = today - one_day_into_25
+past_data = AutoVivification()
+past_data = ystockquote.get_historical_prices(sys.argv[1],str(previousDay),str(today))	# take dates from july to september
+previousDayWithoutDashes = str(previousDay).replace('-', '').replace(' ', '')
+weekdays = pandas.Series(pandas.bdate_range(previousDayWithoutDashes, periods=16))	# only weekdays from july to september
+#---------------------------
 dates = weekdays.dt.strftime('%Y-%m-%d')
 p = 41
 i = 0
