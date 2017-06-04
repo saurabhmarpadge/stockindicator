@@ -11,19 +11,19 @@
           <span class="text-muted">Something else</span>
           <div>
             <h5 class="imgdesc">GP</h5>
-            <h5 class="imgdesc" >24</h5>
+            <h5 class="imgdesc" >66</h5>
           </div>
           <div>
             <h5 class="imgdesc" >RSI</h5>
-            <h5 class="imgdesc" >24</h5>
+            <h5 class="imgdesc" >62</h5>
           </div>
           <div>
             <h5 class="imgdesc" >Reality</h5>
-            <h5 class="imgdesc" >24</h5>
+            <h5 class="imgdesc" >68</h5>
           </div>
           <div>
             <h5 class="imgdesc" >Twitter</h5>
-            <h5 class="imgdesc" >24</h5>
+            <h5 class="imgdesc" >1</h5>
           </div>
 
     </div>
@@ -33,19 +33,19 @@
       <span class="text-muted">Something else</span>
       <div>
         <h5 class="imgdesc">GP</h5>
-        <h5 class="imgdesc" >24</h5>
+        <h5 class="imgdesc" >55</h5>
       </div>
       <div>
         <h5 class="imgdesc" >RSI</h5>
-        <h5 class="imgdesc" >24</h5>
+        <h5 class="imgdesc" >50</h5>
       </div>
       <div>
         <h5 class="imgdesc" >Reality</h5>
-        <h5 class="imgdesc" >24</h5>
+        <h5 class="imgdesc" >56</h5>
       </div>
       <div>
         <h5 class="imgdesc" >Twitter</h5>
-        <h5 class="imgdesc" >24</h5>
+        <h5 class="imgdesc" >0</h5>
       </div>
     </div>
   <div class="col-xs-6 col-sm-3 placeholder" id="imgdesc">
@@ -54,19 +54,19 @@
       <span class="text-muted">Something else</span>
       <div>
         <h5 class="imgdesc">GP</h5>
-        <h5 class="imgdesc" >24</h5>
+        <h5 class="imgdesc" >70</h5>
       </div>
       <div>
         <h5 class="imgdesc" >RSI</h5>
-        <h5 class="imgdesc" >24</h5>
+        <h5 class="imgdesc" >71</h5>
       </div>
       <div>
         <h5 class="imgdesc" >Reality</h5>
-        <h5 class="imgdesc" >24</h5>
+        <h5 class="imgdesc" >70</h5>
       </div>
       <div>
         <h5 class="imgdesc" >Twitter</h5>
-        <h5 class="imgdesc" >24</h5>
+        <h5 class="imgdesc" >1</h5>
       </div>
     </div>
   <div class="col-xs-6 col-sm-3 placeholder" id="imgdesc">
@@ -75,19 +75,19 @@
       <span class="text-muted">Something else</span>
       <div>
         <h5 class="imgdesc">GP</h5>
-        <h5 class="imgdesc" >24</h5>
+        <h5 class="imgdesc" >60</h5>
       </div>
       <div>
         <h5 class="imgdesc" >RSI</h5>
-        <h5 class="imgdesc" >24</h5>
+        <h5 class="imgdesc" >55</h5>
       </div>
       <div>
         <h5 class="imgdesc" >Reality</h5>
-        <h5 class="imgdesc" >24</h5>
+        <h5 class="imgdesc" >58</h5>
       </div>
       <div>
         <h5 class="imgdesc" >Twitter</h5>
-        <h5 class="imgdesc" >24</h5>
+        <h5 class="imgdesc" >1</h5>
       </div>
     </div>
   <div class="col-xs-6 col-sm-3 placeholder" id="imgdesc">

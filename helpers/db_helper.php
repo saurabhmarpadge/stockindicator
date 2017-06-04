@@ -32,3 +32,13 @@ function getGraph(){
   }
   return $data;
 }
+
+function getDetails($user){
+  $db = new Database;
+	$db->query('SELECT * FROM users
+						 WHERE username=:username');
+	$db->bind(':username', $user);
+	//Assign Result Set
+	$results = $db->resultset();
+	return $results;
+}

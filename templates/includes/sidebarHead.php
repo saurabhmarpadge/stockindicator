@@ -9,9 +9,10 @@
       </ul>
 
       <ul class="nav nav-sidebar">
-        <li><a href="">History</a></li>
-        <li><a href="">Sold</a></li>
-        <li><a href="">Bought</a></li>
+        <li><a href="<?php echo BASE_URI;?>companydetail.php">About Company</a></li>
+        <li><a href="<?php echo BASE_URI;?>history.php">History</a></li>
+        <li><a href="<?php echo BASE_URI;?>sold.php">Sold</a></li>
+        <li><a href="<?php echo BASE_URI;?>bought.php">Bought</a></li>
       </ul>
 
       <ul class="nav nav-sidebar">

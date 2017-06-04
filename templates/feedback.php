@@ -26,8 +26,8 @@
             <div class="form-group">
              <label>How would you suggest I improve it?</label><br />
              <textarea rows="4" cols="80" clas="form-control" name="suggest" placeholder="...">
-At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
-</textarea>
+
+            </textarea>
             </div>
             <button name="submit" type="submit" class="btn btn-primary">Submit</button>
           </form>
