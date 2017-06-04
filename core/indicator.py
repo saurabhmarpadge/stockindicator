@@ -116,13 +116,13 @@ def main():
 	pop, log = algorithms.eaSimple(pop, toolbox, 0.6, 0.1, 3, stats=mstats,halloffame=hof, verbose=True)
 	function = toolbox.compile(expr=hof[0])
 	# obtained = function(open_val[p-2],close_val[p-2],low_val[p-2],high_val[p-2],volume_val[p-2]) # no volume bro
-    obtained = function(open_val[p-2],close_val[p-2],low_val[p-2],high_val[p-2])
+	obtained = function(open_val[p-2],close_val[p-2],low_val[p-2],high_val[p-2])
 	expected = close_val[p-1]
 	difference = abs(obtained-expected)
 	previous_day_price = open_val[p-2]
 	gp_says=obtained-previous_day_price
 	#todays_price = (float)(ystockquote.get_price(sys.argv[1])) - correct function name of working ystockquote repo
-    todays_price = (float)(ystockquote.get_today_open(sys.argv[1]))
+	todays_price = (float)(ystockquote.get_today_open(sys.argv[1]))
 	reality_says = todays_price - expected
 	jpass = [rsi,gp_says,reality_says]
 	print json.dumps(jpass)

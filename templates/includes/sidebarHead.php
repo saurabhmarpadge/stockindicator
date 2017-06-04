@@ -4,8 +4,8 @@
       <ul class="nav nav-sidebar">
         <li class="active"><a href="<?php echo BASE_URI;?>dashboard.php">Overview <span class="sr-only">(current)</span></a></li>
         <li><a href="<?php echo BASE_URI;?>company.php">Companies</a></li>
-        <li><a href="#">Trends</a></li>
-        <li><a href="#">Poll</a></li>
+        <li><a href="<?php echo BASE_URI;?>trending.php">Trends</a></li>
+        <li><a href="<?php echo BASE_URI;?>working.php">How it works</a></li>
       </ul>
 
       <ul class="nav nav-sidebar">
