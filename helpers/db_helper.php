@@ -18,6 +18,28 @@ function getCompanies(){
   return $results;
 }
 
+function getDashtable(){
+  $db = new Database;
+
+  $db->query('SELECT * FROM dashtable');
+  //Assign Result Set
+  $results = $db->resultset();
+
+  return $results;
+}
+
+function getCompaniesName(){
+  $db = new Database;
+
+  $db->query('SELECT companyname FROM company where companyid=:companyid');
+  //Assign Result Set
+
+  $db->bind(':companyid', $_SESSION['companyid']);
+  $results = $db->resultset();
+
+  return $results;
+}
+
 function getGraph(){
   $db = new Database;
   $db->query('SELECT graph.gp,graph.rsi,graph.reality,graph.twitter,graph.ondate FROM graph WHERE graph.companyid =:companyid');

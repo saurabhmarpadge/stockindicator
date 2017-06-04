@@ -34,7 +34,7 @@
     <div id="menu2" class="tab-pane fade">
 
       <h3>Relative Strength Index</h3>
-       <img class="img-thumbnail" src="img/RSI.gif" alt="RSI">
+       <img class="img-thumbnail" src="img/rsi.gif" alt="RSI">
        <br>
       <p>&nbsp&nbsp&nbsp&nbspThe relative strength index (RSI) is a technical indicator used in the analysis of financial markets. It is intended to chart the current and historical strength or weakness of a stock or market based on the closing prices of a recent trading period. The indicator should not be confused with relative strength.
       </p>

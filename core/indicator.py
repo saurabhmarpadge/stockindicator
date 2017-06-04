@@ -9,12 +9,14 @@ past_data = AutoVivification()
 #--------------------------
 today = datetime.date.today()
 #one_day_into_25 = datetime.timedelta(days=25)
-one_day_into_25 = datetime.timedelta(days=30) # increased range because of unforeseen holidays popping up every now ant then and returning null values
+one_day_into_25 = datetime.timedelta(days=35) # increased range because of unforeseen holidays popping up every now ant then and returning null values
 previousDay = today - one_day_into_25
-past_data = AutoVivification()
+#past_data = AutoVivification()
 past_data = ystockquote.get_historical_prices(sys.argv[1],str(previousDay),str(today))	# take dates from july to september
 previousDayWithoutDashes = str(previousDay).replace('-', '').replace(' ', '')
 weekdays = pandas.Series(pandas.bdate_range(previousDayWithoutDashes, periods=16))	# only weekdays from july to september
+print past_data[0][0]
+'''
 #---------------------------
 dates = weekdays.dt.strftime('%Y-%m-%d')
 p = 41
@@ -29,10 +31,10 @@ while i<(p-1):
 	#close_val.append(eval(past_data[dates[i]]['Close']))
 	#low_val.append(eval(past_data[dates[i]]['Low']))
 	#high_val.append(eval(past_data[dates[i]]['High']))
-	open_val.append(eval(past_data[dates[i]]['open']))
-	close_val.append(eval(past_data[dates[i]]['close']))
-	low_val.append(eval(past_data[dates[i]]['low']))
-	high_val.append(eval(past_data[dates[i]]['high']))
+	open_val.append(eval(past_data[dates[i]][u'Open']))
+	close_val.append(eval(past_data[dates[i]]['Close']))
+	low_val.append(eval(past_data[dates[i]]['Low']))
+	high_val.append(eval(past_data[dates[i]]['High']))
 	#volume_val.append(eval(past_data[dates[i]]['Volume']))
 	i = i + 1
 close_val.append(eval(past_data[dates[i]]['Close']))
@@ -42,12 +44,12 @@ rsi_i = 0
 avg_gain = 0
 avg_loss = 0
 while (rsi_i < rsi_n):
-    change = close_val[rsi_i + 1] - close_val[rsi_i]
-    if (change < 0):
-        avg_loss = avg_loss + change
-    else:
-        avg_gain = avg_gain + change
-    rsi_i = rsi_i + 1
+	change = close_val[rsi_i + 1] - close_val[rsi_i]
+	if (change < 0):
+	    avg_loss = avg_loss + change
+	else:
+	    avg_gain = avg_gain + change
+	rsi_i = rsi_i + 1
 avg_gain = avg_gain / 40
 avg_loss = abs(avg_loss) / 40
 rs = avg_gain / avg_loss
@@ -85,16 +87,16 @@ toolbox.register("individual", tools.initIterate, creator.Individual, toolbox.ex
 toolbox.register("population", tools.initRepeat, list, toolbox.individual)
 toolbox.register("compile", gp.compile, pset=pset)
 def evalSymbReg(individual):
-    func = toolbox.compile(expr=individual)
-    abs_error = 0
-    j = 40
-    k = 0
-    while k<j:
-        #error = abs(func(open_val[k],close_val[k],low_val[k],high_val[k],volume_val[k]) - close_val[k+1]) # no volume..sigh
-        error = abs(func(open_val[k],close_val[k],low_val[k],high_val[k]) - close_val[k+1])
-        k = k + 1
-        abs_error = abs_error + error
-    return abs_error,
+	func = toolbox.compile(expr=individual)
+	abs_error = 0
+	j = 40
+	k = 0
+	while k<j:
+		#error = abs(func(open_val[k],close_val[k],low_val[k],high_val[k],volume_val[k]) - close_val[k+1]) # no volume..sigh
+		error = abs(func(open_val[k],close_val[k],low_val[k],high_val[k]) - close_val[k+1])
+		k = k + 1
+		abs_error = abs_error + error
+	return abs_error,
 toolbox.register("evaluate",evalSymbReg)
 toolbox.register("select", tools.selTournament, tournsize=3)
 toolbox.register("mate", gp.cxOnePoint)
@@ -129,3 +131,4 @@ def main():
 	return pop, log, hof
 if __name__ == "__main__":
     main()
+'''
